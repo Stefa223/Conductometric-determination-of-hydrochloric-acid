@@ -1,6 +1,99 @@
 \documentclass{article}
+\usepackage{graphicx}
+\usepackage{mhchem}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepackage{filecontents}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+
+\title{ОПРЕДЕЛЕНИЕ СОДЕРЖАНИЯ ХЛОРИСТОВОДОРОДНОЙ КСЛОТЫ МЕТОДОМ КОНДУКТОМЕТРИЧЕСКОГО ТИТРОВАНИЯ}
+\author{Афанасьев С.М.}
+\date{06.05.24}
+
+\usepackage{tocloft}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsecfont}{\normalfont}
 
 \begin{document}
-First document. This is a simple example, with no 
-extra parameters or packages included.
-\end{document}
+   \maketitle
+   \tableofcontents
+   \newpage
+
+   \section*{Введение}
+   \addcontentsline{toc}{section}{Введение}
+  
+   \textbf{\textit{Цель работы:}} 
+   закрепление навыков работы с аналитическим оборудованием кондуктометрического метода анализа и методикой кондуктометрического титрования. 
+   Закрепление полученных навыков и умений определять содержание соляной кислоты методом КТ.
+
+   \begin{flushleft}
+    \textbf{\textit{Приборы и реактивы:}} \\
+    \textit{кондуктометр;} \\
+    \textit{стандартный раствор гидроксида натрия - 0,1 моль/л;} \\
+    \textit{пластиковый стакан емкостью 100 мл;} \\
+    \textit{бюретка ёмкостью 25 мл;} \\
+    \textit{мерные пипетки емкостью 10 мл.}
+    \end{flushleft}
+   \newpage
+
+   \section*{Введение в кондуктометрическое титрование}
+   \addcontentsline{toc}{section}{Введение в кондуктометрическое титрование}
+   
+   Изменение удельной электропроводности (УЭП) $\chi$ в растворе соляной кислоты в процессе титрования 
+   раствором гидроксида натрия до точки эквивалентности определяется высокой подвижностью Н$^+$-ионов, причем концентрация Н$^+$-ионов 
+   в процессе титрования уменьшается пропорционально количеству добавленного титранта, и, соответственно, наблюдается линейное уменьшение 
+   $\chi$ раствора. В точке эквивалентности удельная электропроводность приобретает минимальное значение. После точки эквивалентности 
+   удельная электропроводность будет определяться подвижностью ОН$^-$-ионов, таким образом, $\chi$ линейно возрастает в соответствии 
+   с увеличением добавленного избытка рабочего раствора гидроксида натрия.
+
+   \begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+                scale only axis,
+                width=7cm,
+                ylabel=$\chi$,
+                xlabel=$V$,
+                xmin=0, xmax=16,
+                ymin=0, ymax=5,
+                xtick={0,1,...,14},
+                xticklabel style={rotate=45, anchor=east},
+                ytick={0,1.1,...,4},
+                axis lines=middle,
+                grid=both
+            ]
+            % Указывайте конкретные имена столбцов, замените xColumn и yColumn на соответствующие заголовки
+            \addplot [only marks] table [x=$V$, y=$\chi$, col sep=comma] {data.csv};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Кривая титрования контрольного раствора соляной кислоты}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   \end{document}
