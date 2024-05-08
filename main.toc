@@ -1,3 +1,0 @@
-\babel@toc {russian}{}\relax 
-\contentsline {section}{Введение}{2}{}%
-\contentsline {section}{Введение в кондуктометрическое титрование}{3}{}%
